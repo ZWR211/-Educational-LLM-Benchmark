@@ -1,0 +1,24 @@
+# ---- WPS / Office 临时锁文件 ----
+~$*
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ---- 原始试卷图片与 PDF（体积大，且含版权内容，不入库）----
+sources/
+
+# ---- 汇报材料、过程文档与历史归档（不入库）----
+*.pptx
+0*.md
+_generation*.js
+_gen_na_c.js
+archive/
+
+# ---- 系统文件 ----
+Thumbs.db
+.DS_Store
+desktop.ini
+*汇报*
