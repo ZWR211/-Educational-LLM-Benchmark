@@ -29,7 +29,9 @@
 import os
 import re
 import json
+import math
 import time
+import warnings
 import argparse
 import threading
 from pathlib import Path
@@ -68,20 +70,56 @@ def build_prompt(q):
 
 # ---------------- 答案提取与判分 ----------------
 
-FULL2HALF = str.maketrans("（）：；，。＝＋－×÷", "():;,.=+-x/")
+FULL2HALF = str.maketrans("（）：；，。＝＋－×÷＜＞", "():;,.=+-x/<>")
+
+SUP_MAP = {"⁰": "0", "¹": "1", "²": "2", "³": "3", "⁴": "4",
+           "⁵": "5", "⁶": "6", "⁷": "7", "⁸": "8", "⁹": "9"}
+
+
+def sup_to_caret(t):
+    """把连续上标转成 ^数字，如 10¹² -> 10^12。"""
+    return re.sub(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]+",
+                  lambda m: "^" + "".join(SUP_MAP[c] for c in m.group(0)), t)
 
 
 def normalize(s):
-    """答案归一化：去空白、统一全角半角、去常见前缀。"""
+    """答案归一化：LaTeX 转纯文本、去说明文字、统一全半角、去前缀。"""
     if s is None:
         return ""
-    t = str(s).strip()
+    t = str(s)
+
+    # 1) 去掉 LaTeX 定界符与常见命令
+    t = t.replace("\\(", "").replace("\\)", "").replace("\\[", "").replace("\\]", "")
+    t = re.sub(r"\\boldsymbol\{([^{}]*)\}", r"\1", t)
+    t = re.sub(r"\\mathbf\{([^{}]*)\}", r"\1", t)
+    t = re.sub(r"\\text\{([^{}]*)\}", r"\1", t)
+    t = re.sub(r"\\frac\{([^{}]*)\}\{([^{}]*)\}", r"(\1)/(\2)", t)
+    t = t.replace("\\times", "×").replace("\\cdot", "·")
+    t = re.sub(r"\\left|\\right", "", t)
+
+    # 去掉纯数字分数的冗余括号：(2)/(5) -> 2/5
+    t = re.sub(r"\((\d+(?:\.\d+)?)\)/\((\d+(?:\.\d+)?)\)", r"\1/\2", t)
+
+    # 2) 指数：^{12} 与 ¹² 统一成 ^12
+    t = re.sub(r"\^\{([^{}]*)\}", r"^\1", t)
+    t = sup_to_caret(t)
+
+    # 3) 去掉“（答案不唯一）”之类的说明
+    t = re.sub(r"[（(]\s*答案不唯一\s*[）)]", "", t)
+    t = re.sub(r"[（(]\s*写出一种即可\s*[）)]", "", t)
+
+    # 4) 统一全半角、去空白、去前缀
     t = t.translate(FULL2HALF)
     t = re.sub(r"\s+", "", t)
-    # 去掉“答案：”“答：”“最终答案是”等前缀
     t = re.sub(r"^(最终)?(答案|答)[:：]?", "", t)
     t = t.strip("。.、")
     return t.lower()
+
+
+def strip_lhs(s):
+    """去掉 'x=' / 'y=' 一类的等式左边，便于比较 'x=3' 与 '3'。"""
+    m = re.fullmatch(r"[a-z]=([^=].*)", s)
+    return m.group(1) if m else s
 
 
 def extract_choice(text):
@@ -106,6 +144,44 @@ def to_number(s):
         return None
 
 
+def numeric_value(s):
+    """尝试把纯数值表达式求值（支持 √）。仅接受安全字符集，避免执行任意代码。"""
+    t = s.replace("√", "S").replace("×", "*").replace("·", "*")
+    if not re.fullmatch(r"[0-9+\-*/().^S ]+", t):
+        return None
+    t = t.replace("^", "**")
+    t = re.sub(r"S(\d+(?:\.\d+)?)", r"sqrt(\1)", t)   # √2 -> sqrt(2)
+    try:
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            return float(eval(t, {"__builtins__": {}}, {"sqrt": math.sqrt}))  # noqa: S307
+    except Exception:
+        return None
+
+
+def parse_ineq(s):
+    """把不等式（组）解析成规范化条件集合。
+    例：'3<x<10/3' -> {('>','3'), ('<','10/3')}
+    """
+    t = s.replace("≤", "<=").replace("≥", ">=")
+    conds = set()
+    for seg in re.split(r"[;；,，]", t):
+        seg = seg.strip()
+        if not seg:
+            continue
+        m = re.fullmatch(r"(-?[\d./]+)(<=|>=|<|>)([a-z])(<=|>=|<|>)(-?[\d./]+)", seg)
+        if m:
+            # a < x < b  等价于  x > a 且 x < b，注意左侧运算符要翻转
+            flip = {"<": ">", ">": "<", "<=": ">=", ">=": "<="}
+            conds.add((flip[m.group(2)], m.group(1)))
+            conds.add((m.group(4), m.group(5)))
+            continue
+        m = re.fullmatch(r"([a-z])(<=|>=|<|>)(-?[\d./]+)", seg)
+        if m:
+            conds.add((m.group(2), m.group(3)))
+    return conds
+
+
 def is_correct(pred, gold, qtype):
     """判分：单选比字母，填空/解答比归一化后的最终答案。"""
     if qtype == "单选题":
@@ -117,9 +193,23 @@ def is_correct(pred, gold, qtype):
     if p == g:
         return True
 
+    # 去掉 x= / y= 前缀后比较（'x=3' 与 '3' 等价）
+    if strip_lhs(p) == strip_lhs(g):
+        return True
+
     # 数值等价：1/2 与 0.5
     pn, gn = to_number(p), to_number(g)
     if pn is not None and gn is not None and abs(pn - gn) < 1e-9:
+        return True
+
+    # 数值表达式等价：-1+√2-1-1 与 √2-3
+    pv, gv = numeric_value(p), numeric_value(g)
+    if pv is not None and gv is not None and abs(pv - gv) < 1e-6:
+        return True
+
+    # 不等式等价：'3<x<10/3' 与 'x>3；x<10/3'
+    pi, gi = parse_ineq(p), parse_ineq(g)
+    if pi and gi and pi == gi:
         return True
 
     # 多问答案：按分号逐问比对，全部一致才算对
