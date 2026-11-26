@@ -557,7 +557,7 @@
     "knowledge_point": "函数",
     "gold": "x ≠ 23",
     "raw": "\\(x\\neq 23\\)（或 \\((-\\infty,23)\\cup(23,+\\infty)\\)）",
-    "pred": "x\\neq23(或(-\\infty,23)\\cup(23,+\\infty))",
+    "pred": "x≠23(或(-\\infty,23)\\cup(23,+\\infty))",
     "correct": false
   },
   {
@@ -887,7 +887,7 @@
     "knowledge_point": "一元一次不等式",
     "gold": "-2≤x<3",
     "raw": "\\(-2 \\le x < 3\\)（即 \\([-2,\\,3)\\)）",
-    "pred": "-2\\lex<3(即[-2,\\,3))",
+    "pred": "-2≤x<3(即[-2,\\,3))",
     "correct": false
   },
   {
@@ -1240,7 +1240,7 @@
     "gold": "135",
     "raw": "135°",
     "pred": "135°",
-    "correct": false
+    "correct": true
   },
   {
     "id": "GG-0004",
@@ -1756,7 +1756,7 @@
     "knowledge_point": "等腰三角形与直角三角形",
     "gold": "(2+2√5,0) 或 (6,0)",
     "raw": "\\((2+2\\sqrt{5},0)；(6,0)\\)",
-    "pred": "(2+2\\sqrt{5},0);(6,0)",
+    "pred": "(2+2√(5),0);(6,0)",
     "correct": false
   },
   {
@@ -1955,7 +1955,7 @@
     "gold": "100",
     "raw": "100名",
     "pred": "100名",
-    "correct": false
+    "correct": true
   },
   {
     "id": "SP-0017",
@@ -1977,7 +1977,7 @@
     "gold": "360",
     "raw": "360人",
     "pred": "360人",
-    "correct": false
+    "correct": true
   },
   {
     "id": "GG-0052",
@@ -2175,7 +2175,7 @@
     "gold": "①，②，③，④",
     "raw": "①；②；③；④",
     "pred": "①;②;③;④",
-    "correct": false
+    "correct": true
   },
   {
     "id": "SP-0026",

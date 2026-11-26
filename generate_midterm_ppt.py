@@ -107,7 +107,7 @@ def table_slide(title, headers, rows, subtitle=None, col_widths=None,
     return s
 
 
-def stat_cards(slide, cards, top=2.1, height=2.2, colors=None):
+def stat_cards(slide, cards, top=2.1, height=2.2, colors=None, size=36):
     n = len(cards)
     cw = (11.93 - 0.3 * (n - 1)) / n
     for i, (num, lab) in enumerate(cards):
@@ -120,47 +120,59 @@ def stat_cards(slide, cards, top=2.1, height=2.2, colors=None):
         tf.vertical_anchor = MSO_ANCHOR.MIDDLE
         p = tf.paragraphs[0]; p.alignment = 2
         r = p.add_run(); r.text = num
-        set_font(r, 36, True, colors[i] if colors else PRIMARY)
+        set_font(r, size, True, colors[i] if colors else PRIMARY)
         p2 = tf.add_paragraph(); p2.alignment = 2; p2.space_before = Pt(6)
         r2 = p2.add_run(); r2.text = lab
         set_font(r2, 14, False, GRAY)
 
 
-def compare_bars(slide, rows, top=1.9, left=2.6, width=8.6, row_h=0.72, max_v=1.0):
-    """rows: [(label, v1, v2)]，画两条对比横条。"""
-    tb = slide.shapes.add_textbox(Inches(0.75), Inches(top - 0.5), Inches(11.8), Inches(0.4))
-    tf = tb.text_frame
-    p = tf.paragraphs[0]
-    r = p.add_run(); r.text = "■ deepseek-chat    "
-    set_font(r, 12, True, PRIMARY)
-    r2 = p.add_run(); r2.text = "■ deepseek-reasoner"
-    set_font(r2, 12, True, ACCENT)
+SERIES = [
+    ("deepseek-chat", PRIMARY),
+    ("deepseek-reasoner", ACCENT),
+    ("qwen2.5:1.5b（本地）", WARM),
+]
 
-    for i, (label, v1, v2) in enumerate(rows):
+
+def compare_bars(slide, rows, top=1.9, left=2.6, width=8.2, row_h=0.8,
+                 series=None, max_v=1.0):
+    """rows: [(label, [v1, v2, v3])]，每个标签画 N 条对比横条。"""
+    series = series or SERIES
+    n = len(series)
+    bar_h = 0.16
+    step = 0.21
+
+    tb = slide.shapes.add_textbox(Inches(0.75), Inches(top - 0.46), Inches(11.9), Inches(0.35))
+    p = tb.text_frame.paragraphs[0]
+    for name, color in series:
+        r = p.add_run(); r.text = "■ " + name + "     "
+        set_font(r, 11, True, color)
+
+    for i, (label, vals) in enumerate(rows):
         y = top + i * row_h
-        lb = slide.shapes.add_textbox(Inches(0.75), Inches(y), Inches(1.75), Inches(0.55))
+        lb = slide.shapes.add_textbox(Inches(0.75), Inches(y - 0.02),
+                                      Inches(1.75), Inches(0.6))
         tf = lb.text_frame; tf.vertical_anchor = MSO_ANCHOR.MIDDLE
         r = tf.paragraphs[0].add_run(); r.text = label
-        set_font(r, 14, True, DARK)
+        set_font(r, 13, True, DARK)
 
-        for k, (v, color) in enumerate([(v1, PRIMARY), (v2, ACCENT)]):
-            by = y + 0.03 + k * 0.26
+        for k, ((name, color), v) in enumerate(zip(series, vals)):
+            by = y + k * step
             bg = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(left),
-                                        Inches(by), Inches(width), Inches(0.2))
+                                        Inches(by), Inches(width), Inches(bar_h))
             bg.fill.solid(); bg.fill.fore_color.rgb = RGBColor(0xEE, 0xEE, 0xEE)
             bg.line.fill.background(); bg.shadow.inherit = False
 
             w = max(0.02, width * v / max_v)
             bar = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(left),
-                                         Inches(by), Inches(w), Inches(0.2))
+                                         Inches(by), Inches(w), Inches(bar_h))
             bar.fill.solid(); bar.fill.fore_color.rgb = color
             bar.line.fill.background(); bar.shadow.inherit = False
 
-            vt = slide.shapes.add_textbox(Inches(left + width + 0.12), Inches(by - 0.03),
-                                          Inches(0.9), Inches(0.26))
+            vt = slide.shapes.add_textbox(Inches(left + width + 0.1), Inches(by - 0.045),
+                                          Inches(0.95), Inches(0.26))
             r = vt.text_frame.paragraphs[0].add_run()
             r.text = f"{v:.1%}"
-            set_font(r, 11, True, color)
+            set_font(r, 10, True, color)
 
 
 # ---------- 1 封面 ----------
@@ -176,7 +188,7 @@ r2 = p2.add_run(); r2.text = "期中汇报"
 set_font(r2, 28, False, RGBColor(0xCD, 0xE0, 0xF0))
 p3 = tf.add_paragraph(); p3.space_before = Pt(14)
 r3 = p3.add_run()
-r3.text = "数据集构建完成 ｜ 双模型基础评测"
+r3.text = "数据集构建完成 ｜ 三模型基础评测（含本地开源模型）"
 set_font(r3, 16, False, RGBColor(0xBF, 0xD4, 0xE8))
 tb2 = s.shapes.add_textbox(Inches(0.9), Inches(6.3), Inches(11.5), Inches(0.6))
 r4 = tb2.text_frame.paragraphs[0].add_run()
@@ -257,7 +269,7 @@ bullets(s, [
 
 # ---------- 6 判分器验证 ----------
 s = prs.slides.add_slide(BLANK)
-header(s, "判分器的可靠性", "22 条单元测试全部通过")
+header(s, "判分器的可靠性", "34 条单元测试全部通过")
 bullets(s, [
     ("已覆盖的等价写法", 0),
     ("LaTeX 格式：\\(1.1\\times 10^{12}\\)  ≡  1.1×10¹²", 1),
@@ -266,53 +278,56 @@ bullets(s, [
     ("数值等价：-1+√2-1-1 ≡ √2-3，0.5 ≡ 1/2", 1),
     ("不等式：(3<x<10/3) ≡ (x>3；x<10/3)", 1),
     ("说明文字：3（答案不唯一） ≡ 3", 1),
+    ("推导链取末段：x(x²-49)=x(x+7)(x-7) ≡ x(x+7)(x-7)", 1),
+    ("单位后缀：833棵 ≡ 833，100名学生 ≡ 100", 1),
+    ("序号分隔符：①；②；③ ≡ ①，②，③", 1),
     ("仍存在的局限", 0),
     ("代数恒等变形（如 (b-a)/3 与 1/3b−1/3a）尚未识别，会轻微低估准确率", 1),
 ], top=1.7, size=14)
 
 # ---------- 7 评测对象 ----------
 s = prs.slides.add_slide(BLANK)
-header(s, "评测对象", "同一服务商的两个不同能力档位模型")
+header(s, "评测对象", "两个 API 模型 + 一个本地开源小模型")
 stat_cards(s, [
-    ("deepseek-chat", "通用对话模型"),
-    ("deepseek-reasoner", "推理增强模型"),
-    ("200", "每题评测题数"),
-    ("2 分钟", "单模型评测耗时"),
-], top=2.0, height=2.1, colors=[PRIMARY, ACCENT, GRAY, GRAY])
+    ("deepseek-chat", "通用对话模型（API）"),
+    ("deepseek-reasoner", "推理增强模型（API）"),
+    ("qwen2.5:1.5b", "本地开源模型（1.5B）"),
+    ("200", "全量评测题数"),
+], top=2.0, height=2.1, colors=[PRIMARY, ACCENT, WARM, GRAY], size=16)
 bullets(s, [
-    "两个模型来自同一服务商，参数量与训练方式不同，形成天然的能力对照",
-    "200 题全量评测，未抽样；每题独立调用，temperature = 0",
-    "评测时间：2026 年 11 月",
+    "前两个来自同一服务商，用于对比「推理增强」带来的增益；第三个是本地部署的开源模型，用于检验基准的区分度",
+    "200 题全量评测，未抽样；三模型使用完全相同的 Prompt 与参数（temperature = 0）",
+    "本地模型经 Ollama 部署，在 RTX 3050（4GB 显存）上 100% GPU 推理，全量约 20 分钟",
 ], top=4.5, size=15)
 
 # ---------- 8 总体结果 ----------
 s = prs.slides.add_slide(BLANK)
-header(s, "总体结果", "推理模型领先 5 个百分点")
+header(s, "总体结果", "三个模型拉开 44 个百分点的跨度")
 stat_cards(s, [
-    ("81.0%", "deepseek-chat"),
-    ("86.0%", "deepseek-reasoner"),
-    ("+5.0pp", "推理模型提升"),
+    ("81.5%", "deepseek-chat"),
+    ("88.0%", "deepseek-reasoner"),
+    ("44.0%", "qwen2.5:1.5b（本地）"),
     ("18.5%", "随机基线（四选一）"),
-], top=2.0, height=2.1, colors=[PRIMARY, ACCENT, GOLD, GRAY])
+], top=2.0, height=2.1, colors=[PRIMARY, ACCENT, WARM, GRAY])
 bullets(s, [
-    "两个模型都显著高于随机基线，说明基准对模型能力有区分度",
-    "推理模型在整体上领先，但差距并非均匀分布——差距主要集中在难题上",
+    "三个模型来源不同，却排成清晰梯队：44.0% → 81.5% → 88.0%，说明基准具备区分度",
+    "推理增强带来的增益为 +6.5pp；本地 1.5B 小模型明显落后，差距主要来自参数规模",
 ], top=4.5, size=15)
 
 # ---------- 9 按题型 ----------
 s = prs.slides.add_slide(BLANK)
 header(s, "结果：按题型", "解答题是最大分水岭")
 compare_bars(s, [
-    ("单选题", 0.905, 0.966),
-    ("填空题", 0.860, 0.860),
-    ("解答题", 0.296, 0.407),
-], top=2.0)
-tb = s.shapes.add_textbox(Inches(0.75), Inches(4.5), Inches(11.8), Inches(1.4))
+    ("单选题", [0.905, 0.966, 0.509]),
+    ("填空题", [0.860, 0.877, 0.421]),
+    ("解答题", [0.333, 0.519, 0.185]),
+], top=2.05, row_h=0.82)
+tb = s.shapes.add_textbox(Inches(0.75), Inches(4.6), Inches(11.8), Inches(1.4))
 tf = tb.text_frame; tf.word_wrap = True
 for i, line in enumerate([
-    "• 单选题两者都接近 90%，说明基础知识点掌握良好",
-    "• 解答题骤降至 30%~41%，三倍差距——多步推理是主要瓶颈",
-    "• 填空题两者持平（86.0%），题型的区分度主要体现在解答题",
+    "• 单选题两个 API 模型都在 90% 以上；本地小模型 50.9%，仅略高于 25% 的随机水平",
+    "• 解答题骤降至 33.3% / 51.9% —— 多步推理是大模型的主要瓶颈",
+    "• 题型难度梯度清晰：单选 > 填空 > 解答，三个模型排序一致",
 ]):
     p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
     p.space_after = Pt(6)
@@ -321,18 +336,18 @@ for i, line in enumerate([
 
 # ---------- 10 按领域 ----------
 s = prs.slides.add_slide(BLANK)
-header(s, "结果：按领域", "图形与几何最弱，综合与实践几乎空白")
+header(s, "结果：按领域", "图形与几何最弱，综合与实践样本不足")
 compare_bars(s, [
-    ("数与代数", 0.865, 0.919),
-    ("图形与几何", 0.722, 0.778),
-    ("统计与概率", 0.839, 0.871),
-    ("综合与实践", 0.250, 0.250),
-], top=1.95)
-tb = s.shapes.add_textbox(Inches(0.75), Inches(5.05), Inches(11.8), Inches(1.0))
+    ("数与代数", [0.865, 0.919, 0.468]),
+    ("图形与几何", [0.722, 0.796, 0.444]),
+    ("统计与概率", [0.839, 0.935, 0.355]),
+    ("综合与实践", [0.500, 0.500, 0.250]),
+], top=1.95, row_h=0.74)
+tb = s.shapes.add_textbox(Inches(0.75), Inches(5.0), Inches(11.8), Inches(1.1))
 tf = tb.text_frame; tf.word_wrap = True
 for i, line in enumerate([
-    "• 数与代数最强，图形与几何低 10 个百分点以上，符合「几何需要辅助线构造」的直觉",
-    "• 综合与实践两者都只有 25%，且完全无差异——样本仅 4 题，结论需谨慎",
+    "• 图形与几何是两个 API 模型的共同弱项（72.2% / 79.6%），低于数与代数 10–14 个百分点",
+    "• 综合与实践仅 4 题、2 题答对，不具备统计意义；本地模型在该维度明显失分",
 ]):
     p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
     p.space_after = Pt(5)
@@ -341,18 +356,18 @@ for i, line in enumerate([
 
 # ---------- 11 按难度 ----------
 s = prs.slides.add_slide(BLANK)
-header(s, "结果：按难度", "差距随难度急剧放大")
+header(s, "结果：按难度", "难度越高，模型间差距越大")
 compare_bars(s, [
-    ("基础", 0.970, 0.960),
-    ("中等", 0.716, 0.784),
-    ("较难", 0.440, 0.680),
-], top=2.0)
-tb = s.shapes.add_textbox(Inches(0.75), Inches(4.5), Inches(11.8), Inches(1.4))
+    ("基础", [0.970, 0.970, 0.554]),
+    ("中等", [0.730, 0.824, 0.338]),
+    ("较难", [0.440, 0.680, 0.280]),
+], top=2.05, row_h=0.82)
+tb = s.shapes.add_textbox(Inches(0.75), Inches(4.6), Inches(11.8), Inches(1.4))
 tf = tb.text_frame; tf.word_wrap = True
 for i, line in enumerate([
-    "• 基础题：chat 97.0% 甚至略高于 reasoner 的 96.0% —— 基础题区分度不足",
-    "• 中等题：差距 6.8 个百分点",
-    "• 较难题：差距扩大到 24 个百分点（44.0% → 68.0%），推理能力优势充分显现",
+    "• 基础题：两个 API 模型完全持平（均为 97.0%）—— 该维度区分度不足",
+    "• 中等题：差距 9.4 个百分点（73.0% → 82.4%）",
+    "• 较难题：差距拉大到 24 个百分点（44.0% → 68.0%），推理能力优势充分显现",
 ]):
     p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
     p.space_after = Pt(6)
@@ -364,12 +379,14 @@ s = prs.slides.add_slide(BLANK)
 header(s, "核心发现", "三条可写进结论的观察")
 findings = [
     ("01", "推理能力的价值集中在难题上",
-     "基础题两者几乎无差异（97.0% vs 96.0%），但较难题相差 24 个百分点。"
+     "基础题两者完全持平（均为 97.0%），但较难题相差 24 个百分点（44.0% vs 68.0%）。"
      "说明推理模型并非全面更强，而是「难题才更强」。"),
     ("02", "解答题是当前大模型的真实短板",
-     "选择题 90%+，解答题不足 41%。模型能选对答案，但难以独立完成多步推理并给出正确结果。"),
-    ("03", "图形与几何是共同弱项",
-     "两个模型在图形与几何上分别只有 72.2% 和 77.8%，明显低于数与代数（86.5% / 91.9%）。"),
+     "选择题 90%+，解答题只有 33.3%（chat）和 51.9%（reasoner）。模型能选对答案，"
+     "但难以独立完成多步推理并给出正确结果。"),
+    ("03", "基准有明显区分度，规模效应显著",
+     "同一个基准上，本地 1.5B 模型 44.0%、通用大模型 81.5%、推理模型 88.0%，"
+     "跨度 44 个百分点——基准不是「谁都能刷到 90%」。"),
 ]
 y = 1.62
 for num, title, body in findings:
@@ -413,7 +430,7 @@ header(s, "当前局限", "如实说明，避免过度解读")
 bullets(s, [
     ("样本与覆盖", 0),
     ("综合与实践仅 4 题，该维度的 25% 不具备统计意义", 1),
-    ("仅评测 2 个模型，且来自同一服务商，代表性有限", 1),
+    ("3 个模型中 2 个来自同一服务商；本地模型只有 1.5B，未覆盖 7B–70B 区间", 1),
     ("评测方式", 0),
     ("仅测 zero-shot，未对比 few-shot / CoT 提示的效果差异", 1),
     ("解答题只判最终答案，未评估推理过程质量", 1),
@@ -426,7 +443,7 @@ bullets(s, [
 s = prs.slides.add_slide(BLANK)
 header(s, "下一步计划", "Week 16–18 期末汇报前")
 bullets(s, [
-    ("扩充模型：增加 3–5 个模型（Qwen、GLM、GPT 等），形成横向对比", 0),
+    ("继续扩充模型：增加 Qwen、GLM、GPT 等 API 模型，并补 7B 本地模型，形成完整规模梯队", 0),
     ("补充提示策略：对比 zero-shot / few-shot / CoT 三种设置", 0),
     ("扩充综合实践题：把该领域题量从 4 题提升到 20 题以上", 0),
     ("人工复核错题：抽查 50 道错题，确认是模型错误还是判分误差", 0),

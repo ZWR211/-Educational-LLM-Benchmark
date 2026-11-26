@@ -2186,7 +2186,7 @@
     "gold": "①，②，③，④",
     "raw": "①；②；③；④",
     "pred": "①;②;③;④",
-    "correct": false
+    "correct": true
   },
   {
     "id": "CP-0003",

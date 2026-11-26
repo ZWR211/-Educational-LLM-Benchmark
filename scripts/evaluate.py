@@ -95,6 +95,13 @@ def normalize(s):
     t = re.sub(r"\\text\{([^{}]*)\}", r"\1", t)
     t = re.sub(r"\\frac\{([^{}]*)\}\{([^{}]*)\}", r"(\1)/(\2)", t)
     t = t.replace("\\times", "×").replace("\\cdot", "·")
+    # 关系符与常见符号（\neq 必须排在 \ne 之前）
+    t = t.replace("\\neq", "≠").replace("\\ne", "≠")
+    t = t.replace("\\leq", "≤").replace("\\le", "≤")
+    t = t.replace("\\geq", "≥").replace("\\ge", "≥")
+    t = t.replace("\\pm", "±").replace("\\pi", "π")
+    t = re.sub(r"\\sqrt\{([^{}]*)\}", r"√(\1)", t)
+    t = t.replace("$", "")
     t = re.sub(r"\\left|\\right", "", t)
 
     # 去掉纯数字分数的冗余括号：(2)/(5) -> 2/5
@@ -112,6 +119,15 @@ def normalize(s):
     t = t.translate(FULL2HALF)
     t = re.sub(r"\s+", "", t)
     t = re.sub(r"^(最终)?(答案|答)[:：]?", "", t)
+    # 去掉“定义域为 / 取值范围是 / 解得”一类的作答前缀
+    changed = True
+    while changed:
+        changed = False
+        for noise in ("定义域为", "定义域是", "取值范围为", "取值范围是",
+                      "其取值范围是", "所以", "因此", "解得"):
+            if t.startswith(noise):
+                t = t[len(noise):]
+                changed = True
     t = t.strip("。.、")
     return t.lower()
 
@@ -146,10 +162,13 @@ def to_number(s):
 
 def numeric_value(s):
     """尝试把纯数值表达式求值（支持 √）。仅接受安全字符集，避免执行任意代码。"""
-    t = s.replace("√", "S").replace("×", "*").replace("·", "*")
-    if not re.fullmatch(r"[0-9+\-*/().^S ]+", t):
+    t = s.replace("×", "*").replace("·", "*")
+    t = re.sub(r"√\s*\(([^()]*)\)", r"sqrt(\1)", t)   # √(2) -> sqrt(2)
+    t = t.replace("√", "S")
+    if not re.fullmatch(r"[0-9+\-*/().^S sqrt]+", t):
         return None
     t = t.replace("^", "**")
+    t = t.replace("S(", "sqrt(")
     t = re.sub(r"S(\d+(?:\.\d+)?)", r"sqrt(\1)", t)   # √2 -> sqrt(2)
     try:
         with warnings.catch_warnings():
@@ -182,14 +201,17 @@ def parse_ineq(s):
     return conds
 
 
-def is_correct(pred, gold, qtype):
-    """判分：单选比字母，填空/解答比归一化后的最终答案。"""
-    if qtype == "单选题":
-        return extract_choice(pred) == gold.strip().upper()
+# 常见单位/量词后缀：模型常写 “833棵”“100名学生”，去掉后仍应判对
+UNITS = ("平方米", "平方厘米", "立方厘米", "名学生", "个学生", "分钟", "小时",
+         "厘米", "毫米", "千米", "分米", "千克", "学生",
+         "元", "棵", "人", "名", "个", "米", "度", "°", "秒", "天",
+         "件", "本", "克", "吨", "岁", "次", "倍")
 
-    p, g = normalize(pred), normalize(gold)
-    if not p:
-        return False
+CIRCLED = re.compile(r"[①②③④⑤⑥⑦⑧⑨⑩⑪⑫]")
+
+
+def _core_equal(p, g):
+    """两种写法是否等价（不含候选生成）。"""
     if p == g:
         return True
 
@@ -211,6 +233,47 @@ def is_correct(pred, gold, qtype):
     pi, gi = parse_ineq(p), parse_ineq(g)
     if pi and gi and pi == gi:
         return True
+
+    # 序号分隔符不敏感：'①，②，③' 与 '①；②；③'
+    if CIRCLED.search(p) and CIRCLED.search(g):
+        if re.sub(r"[；;，,]", "", p) == re.sub(r"[；;，,]", "", g):
+            return True
+    return False
+
+
+def answer_variants(p):
+    """生成模型答案的等价写法（带单位、写了推导链等）。"""
+    seen = {p}
+    yield p
+
+    # 1) 去掉末尾单位/量词：'100名学生' -> '100'，'833棵' -> '833'
+    for u in UNITS:
+        if p.endswith(u) and len(p) > len(u):
+            v = p[: -len(u)].rstrip("的")
+            if v and v not in seen:
+                seen.add(v)
+                yield v
+
+    # 2) 多段等式的最后一段：'x(x²-49)=x(x+7)(x-7)' -> 'x(x+7)(x-7)'
+    if "=" in p and not re.fullmatch(r"[a-z]=[^=]*", p):
+        v = p.rsplit("=", 1)[-1]
+        if v and v not in seen:
+            seen.add(v)
+            yield v
+
+
+def is_correct(pred, gold, qtype):
+    """判分：单选比字母，填空/解答比归一化后的最终答案。"""
+    if qtype == "单选题":
+        return extract_choice(pred) == gold.strip().upper()
+
+    p, g = normalize(pred), normalize(gold)
+    if not p:
+        return False
+
+    for pv in answer_variants(p):
+        if _core_equal(pv, g):
+            return True
 
     # 多问答案：按分号逐问比对，全部一致才算对
     gparts = [x for x in re.split(r"[;；]", g) if x]
