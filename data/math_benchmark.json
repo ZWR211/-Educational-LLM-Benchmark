@@ -230,38 +230,6 @@
     "id": "NA-0013",
     "domain": "数与代数",
     "knowledge_point": "实数",
-    "difficulty": "中等",
-    "type": "解答题",
-    "question": "计算：|-√2| + (-2023)⁰ - 2sin45° - (1/2)⁻¹．",
-    "options": [],
-    "answer": "-1",
-    "analysis": "|-√2| = √2，(-2023)⁰ = 1，2sin45° = 2×(√2/2) = √2，(1/2)⁻¹ = 2。原式 = √2+1-√2-2 = -1。",
-    "source": "2023年湖南省长沙市中考数学试卷 第17题（原题收录）",
-    "source_type": "真题",
-    "batch": "长沙2023",
-    "verify_status": "已人工校验",
-    "source_id": "CS2023-J17"
-  },
-  {
-    "id": "NA-0014",
-    "domain": "数与代数",
-    "knowledge_point": "整式运算",
-    "difficulty": "中等",
-    "type": "解答题",
-    "question": "先化简，再求值：(2-a)(2+a) - 2a(a+3) + 3a²，其中 a = -1/3．",
-    "options": [],
-    "answer": "6",
-    "analysis": "原式 = (4-a²) - (2a²+6a) + 3a² = 4-a²-2a²-6a+3a² = 4-6a。代入 a = -1/3 得 4-6×(-1/3) = 4+2 = 6。",
-    "source": "2023年湖南省长沙市中考数学试卷 第18题（原题收录）",
-    "source_type": "真题",
-    "batch": "长沙2023",
-    "verify_status": "已人工校验",
-    "source_id": "CS2023-J18"
-  },
-  {
-    "id": "NA-0015",
-    "domain": "数与代数",
-    "knowledge_point": "实数",
     "difficulty": "基础",
     "type": "单选题",
     "question": "下列各数中，是无理数的是（　）",
@@ -280,7 +248,7 @@
     "source_id": "CS2023-01"
   },
   {
-    "id": "NA-0016",
+    "id": "NA-0014",
     "domain": "数与代数",
     "knowledge_point": "整式运算",
     "difficulty": "基础",
@@ -301,7 +269,7 @@
     "source_id": "CS2023-03"
   },
   {
-    "id": "NA-0017",
+    "id": "NA-0015",
     "domain": "数与代数",
     "knowledge_point": "科学记数法与近似数",
     "difficulty": "基础",
@@ -322,7 +290,7 @@
     "source_id": "CS2023-05"
   },
   {
-    "id": "NA-0018",
+    "id": "NA-0016",
     "domain": "数与代数",
     "knowledge_point": "一次函数",
     "difficulty": "基础",
@@ -343,7 +311,7 @@
     "source_id": "CS2023-09"
   },
   {
-    "id": "NA-0019",
+    "id": "NA-0017",
     "domain": "数与代数",
     "knowledge_point": "因式分解",
     "difficulty": "基础",
@@ -359,7 +327,7 @@
     "source_id": "CS2023-11"
   },
   {
-    "id": "NA-0020",
+    "id": "NA-0018",
     "domain": "数与代数",
     "knowledge_point": "有理数及其运算",
     "difficulty": "基础",
@@ -380,7 +348,7 @@
     "source_id": "CD2023-01"
   },
   {
-    "id": "NA-0021",
+    "id": "NA-0019",
     "domain": "数与代数",
     "knowledge_point": "科学记数法与近似数",
     "difficulty": "基础",
@@ -401,7 +369,7 @@
     "source_id": "CD2023-02"
   },
   {
-    "id": "NA-0022",
+    "id": "NA-0020",
     "domain": "数与代数",
     "knowledge_point": "一元一次方程",
     "difficulty": "较难",
@@ -422,7 +390,7 @@
     "source_id": "CD2023-07"
   },
   {
-    "id": "NA-0023",
+    "id": "NA-0021",
     "domain": "数与代数",
     "knowledge_point": "二次函数",
     "difficulty": "较难",
@@ -443,7 +411,7 @@
     "source_id": "CD2023-08"
   },
   {
-    "id": "NA-0024",
+    "id": "NA-0022",
     "domain": "数与代数",
     "knowledge_point": "因式分解",
     "difficulty": "基础",
@@ -459,7 +427,7 @@
     "source_id": "CD2023-09"
   },
   {
-    "id": "NA-0025",
+    "id": "NA-0023",
     "domain": "数与代数",
     "knowledge_point": "反比例函数",
     "difficulty": "中等",
@@ -475,7 +443,7 @@
     "source_id": "CD2023-10"
   },
   {
-    "id": "NA-0026",
+    "id": "NA-0024",
     "domain": "数与代数",
     "knowledge_point": "有理数及其运算",
     "difficulty": "基础",
@@ -496,7 +464,7 @@
     "source_id": "GD2026-01"
   },
   {
-    "id": "NA-0027",
+    "id": "NA-0025",
     "domain": "数与代数",
     "knowledge_point": "科学记数法与近似数",
     "difficulty": "基础",
@@ -517,7 +485,7 @@
     "source_id": "GD2026-03"
   },
   {
-    "id": "NA-0028",
+    "id": "NA-0026",
     "domain": "数与代数",
     "knowledge_point": "一元二次方程",
     "difficulty": "中等",
@@ -533,7 +501,7 @@
     "source_id": "GD2026-11"
   },
   {
-    "id": "NA-0029",
+    "id": "NA-0027",
     "domain": "数与代数",
     "knowledge_point": "因式分解",
     "difficulty": "中等",
@@ -549,7 +517,7 @@
     "source_id": "GD2026-12"
   },
   {
-    "id": "NA-0030",
+    "id": "NA-0028",
     "domain": "数与代数",
     "knowledge_point": "有理数及其运算",
     "difficulty": "基础",
@@ -570,7 +538,7 @@
     "source_id": "HN2026-01"
   },
   {
-    "id": "NA-0031",
+    "id": "NA-0029",
     "domain": "数与代数",
     "knowledge_point": "科学记数法与近似数",
     "difficulty": "基础",
@@ -591,7 +559,7 @@
     "source_id": "HN2026-04"
   },
   {
-    "id": "NA-0032",
+    "id": "NA-0030",
     "domain": "数与代数",
     "knowledge_point": "整式运算",
     "difficulty": "基础",
@@ -612,7 +580,7 @@
     "source_id": "HN2026-06"
   },
   {
-    "id": "NA-0033",
+    "id": "NA-0031",
     "domain": "数与代数",
     "knowledge_point": "分式方程",
     "difficulty": "基础",
@@ -633,7 +601,7 @@
     "source_id": "HN2026-07"
   },
   {
-    "id": "NA-0034",
+    "id": "NA-0032",
     "domain": "数与代数",
     "knowledge_point": "二次根式及其运算",
     "difficulty": "基础",
@@ -654,7 +622,7 @@
     "source_id": "HN2026-09"
   },
   {
-    "id": "NA-0035",
+    "id": "NA-0033",
     "domain": "数与代数",
     "knowledge_point": "实数",
     "difficulty": "基础",
@@ -670,7 +638,7 @@
     "source_id": "HN2026-13"
   },
   {
-    "id": "NA-0036",
+    "id": "NA-0034",
     "domain": "数与代数",
     "knowledge_point": "因式分解",
     "difficulty": "基础",
@@ -686,7 +654,7 @@
     "source_id": "HN2026-14"
   },
   {
-    "id": "NA-0037",
+    "id": "NA-0035",
     "domain": "数与代数",
     "knowledge_point": "二次根式及其运算",
     "difficulty": "基础",
@@ -707,7 +675,7 @@
     "source_id": "HB2022-04"
   },
   {
-    "id": "NA-0038",
+    "id": "NA-0036",
     "domain": "数与代数",
     "knowledge_point": "一元一次方程",
     "difficulty": "中等",
@@ -728,7 +696,7 @@
     "source_id": "HB2022-15"
   },
   {
-    "id": "NA-0039",
+    "id": "NA-0037",
     "domain": "数与代数",
     "knowledge_point": "实数",
     "difficulty": "基础",
@@ -749,7 +717,7 @@
     "source_id": "HS2022-01"
   },
   {
-    "id": "NA-0040",
+    "id": "NA-0038",
     "domain": "数与代数",
     "knowledge_point": "函数",
     "difficulty": "中等",
@@ -770,7 +738,7 @@
     "source_id": "HS2022-05"
   },
   {
-    "id": "NA-0041",
+    "id": "NA-0039",
     "domain": "数与代数",
     "knowledge_point": "二次函数",
     "difficulty": "较难",
@@ -791,7 +759,7 @@
     "source_id": "HS2022-10"
   },
   {
-    "id": "NA-0042",
+    "id": "NA-0040",
     "domain": "数与代数",
     "knowledge_point": "有理数及其运算",
     "difficulty": "基础",
@@ -807,7 +775,7 @@
     "source_id": "HS2022-11"
   },
   {
-    "id": "NA-0043",
+    "id": "NA-0041",
     "domain": "数与代数",
     "knowledge_point": "因式分解",
     "difficulty": "基础",
@@ -823,7 +791,7 @@
     "source_id": "HS2022-12"
   },
   {
-    "id": "NA-0044",
+    "id": "NA-0042",
     "domain": "数与代数",
     "knowledge_point": "科学记数法与近似数",
     "difficulty": "基础",
@@ -839,39 +807,7 @@
     "source_id": "HS2022-13"
   },
   {
-    "id": "NA-0045",
-    "domain": "数与代数",
-    "knowledge_point": "实数",
-    "difficulty": "中等",
-    "type": "解答题",
-    "question": "计算：∛8 + 1/(2+√5) - (1/3)⁻² + |√5-3|．",
-    "options": [],
-    "answer": "-6",
-    "analysis": "∛8 = 2；1/(2+√5) = (√5-2)/[(√5+2)(√5-2)] = √5-2；(1/3)⁻² = 9；|√5-3| = 3-√5。原式 = 2+(√5-2)-9+(3-√5) = -6。",
-    "source": "2023年上海市中考数学试卷 第19题（原题收录）",
-    "source_type": "真题",
-    "batch": "上海2023",
-    "verify_status": "已人工校验",
-    "source_id": "SH2023-J19"
-  },
-  {
-    "id": "NA-0046",
-    "domain": "数与代数",
-    "knowledge_point": "一元一次不等式",
-    "difficulty": "基础",
-    "type": "解答题",
-    "question": "解不等式组：{ 3x > x+6, (1/2)x < -x+5 }．",
-    "options": [],
-    "answer": "3<x<10/3",
-    "analysis": "由 3x > x+6 得 2x > 6，x > 3；由 (1/2)x < -x+5 得 (3/2)x < 5，x < 10/3。故解集为 3 < x < 10/3。",
-    "source": "2023年上海市中考数学试卷 第20题（原题收录）",
-    "source_type": "真题",
-    "batch": "上海2023",
-    "verify_status": "已人工校验",
-    "source_id": "SH2023-J20"
-  },
-  {
-    "id": "NA-0047",
+    "id": "NA-0043",
     "domain": "数与代数",
     "knowledge_point": "分式方程",
     "difficulty": "中等",
@@ -892,7 +828,7 @@
     "source_id": "SH2023-02"
   },
   {
-    "id": "NA-0048",
+    "id": "NA-0044",
     "domain": "数与代数",
     "knowledge_point": "一次函数",
     "difficulty": "基础",
@@ -913,7 +849,7 @@
     "source_id": "SH2023-03"
   },
   {
-    "id": "NA-0049",
+    "id": "NA-0045",
     "domain": "数与代数",
     "knowledge_point": "因式分解",
     "difficulty": "基础",
@@ -929,7 +865,7 @@
     "source_id": "SH2023-07"
   },
   {
-    "id": "NA-0050",
+    "id": "NA-0046",
     "domain": "数与代数",
     "knowledge_point": "分式及其运算",
     "difficulty": "基础",
@@ -945,7 +881,7 @@
     "source_id": "SH2023-08"
   },
   {
-    "id": "NA-0051",
+    "id": "NA-0047",
     "domain": "数与代数",
     "knowledge_point": "二次根式及其运算",
     "difficulty": "基础",
@@ -961,7 +897,7 @@
     "source_id": "SH2023-09"
   },
   {
-    "id": "NA-0052",
+    "id": "NA-0048",
     "domain": "数与代数",
     "knowledge_point": "函数",
     "difficulty": "基础",
@@ -977,7 +913,7 @@
     "source_id": "SH2023-10"
   },
   {
-    "id": "NA-0053",
+    "id": "NA-0049",
     "domain": "数与代数",
     "knowledge_point": "一元二次方程",
     "difficulty": "中等",
@@ -993,7 +929,7 @@
     "source_id": "SH2023-11"
   },
   {
-    "id": "NA-0054",
+    "id": "NA-0050",
     "domain": "数与代数",
     "knowledge_point": "二次函数",
     "difficulty": "中等",
@@ -1009,7 +945,7 @@
     "source_id": "SH2023-14"
   },
   {
-    "id": "NA-0055",
+    "id": "NA-0051",
     "domain": "数与代数",
     "knowledge_point": "分式方程",
     "difficulty": "基础",
@@ -1025,7 +961,7 @@
     "source_id": "SX2023-13"
   },
   {
-    "id": "NA-0056",
+    "id": "NA-0052",
     "domain": "数与代数",
     "knowledge_point": "反比例函数",
     "difficulty": "较难",
@@ -1041,39 +977,7 @@
     "source_id": "SX2023-15"
   },
   {
-    "id": "NA-0057",
-    "domain": "数与代数",
-    "knowledge_point": "实数",
-    "difficulty": "基础",
-    "type": "解答题",
-    "question": "计算：(π-1)⁰ - √8 + |-2√2|．",
-    "options": [],
-    "answer": "1",
-    "analysis": "(π-1)⁰ = 1；√8 = 2√2；|-2√2| = 2√2。原式 = 1-2√2+2√2 = 1。",
-    "source": "2023年浙江省绍兴市中考数学试卷 第17题(1)（原题收录）",
-    "source_type": "真题",
-    "batch": "绍兴2023",
-    "verify_status": "已人工校验",
-    "source_id": "SX2023-J17a"
-  },
-  {
-    "id": "NA-0058",
-    "domain": "数与代数",
-    "knowledge_point": "一元一次不等式",
-    "difficulty": "基础",
-    "type": "解答题",
-    "question": "解不等式：3x-2 > x+4．",
-    "options": [],
-    "answer": "x>3",
-    "analysis": "移项得 3x-x > 4+2，即 2x > 6，故 x > 3。",
-    "source": "2023年浙江省绍兴市中考数学试卷 第17题(2)（原题收录）",
-    "source_type": "真题",
-    "batch": "绍兴2023",
-    "verify_status": "已人工校验",
-    "source_id": "SX2023-J17b"
-  },
-  {
-    "id": "NA-0059",
+    "id": "NA-0053",
     "domain": "数与代数",
     "knowledge_point": "有理数及其运算",
     "difficulty": "基础",
@@ -1094,7 +998,7 @@
     "source_id": "SX2023-01"
   },
   {
-    "id": "NA-0060",
+    "id": "NA-0054",
     "domain": "数与代数",
     "knowledge_point": "科学记数法与近似数",
     "difficulty": "基础",
@@ -1115,7 +1019,7 @@
     "source_id": "SX2023-02"
   },
   {
-    "id": "NA-0061",
+    "id": "NA-0055",
     "domain": "数与代数",
     "knowledge_point": "二元一次方程组",
     "difficulty": "中等",
@@ -1136,7 +1040,7 @@
     "source_id": "SX2023-06"
   },
   {
-    "id": "NA-0062",
+    "id": "NA-0056",
     "domain": "数与代数",
     "knowledge_point": "有理数及其运算",
     "difficulty": "基础",
@@ -1157,7 +1061,7 @@
     "source_id": "SY2022-01"
   },
   {
-    "id": "NA-0063",
+    "id": "NA-0057",
     "domain": "数与代数",
     "knowledge_point": "一元一次方程",
     "difficulty": "较难",
@@ -1178,7 +1082,7 @@
     "source_id": "SY2022-06"
   },
   {
-    "id": "NA-0064",
+    "id": "NA-0058",
     "domain": "数与代数",
     "knowledge_point": "科学记数法与近似数",
     "difficulty": "基础",
@@ -1194,7 +1098,7 @@
     "source_id": "SY2022-11"
   },
   {
-    "id": "NA-0065",
+    "id": "NA-0059",
     "domain": "数与代数",
     "knowledge_point": "一元一次不等式",
     "difficulty": "基础",
@@ -1210,39 +1114,7 @@
     "source_id": "SY2022-12"
   },
   {
-    "id": "NA-0066",
-    "domain": "数与代数",
-    "knowledge_point": "分式方程",
-    "difficulty": "中等",
-    "type": "解答题",
-    "question": "解分式方程：1/x = 4/(x+3)．",
-    "options": [],
-    "answer": "x=1",
-    "analysis": "去分母得 x+3 = 4x，解得 x = 1。检验 x = 1 时分母不为 0，成立。",
-    "source": "2022年湖北省随州市中考数学试卷 第17题（原题收录）",
-    "source_type": "真题",
-    "batch": "随州2022",
-    "verify_status": "已人工校验",
-    "source_id": "SUIZ2022-J17"
-  },
-  {
-    "id": "NA-0067",
-    "domain": "数与代数",
-    "knowledge_point": "一元二次方程",
-    "difficulty": "中等",
-    "type": "解答题",
-    "question": "已知关于 x 的一元二次方程 x²+(2k+1)x+k²+1 = 0 有两个不等实数根 x₁，x₂．（1）求 k 的取值范围；（2）若 x₁x₂ = 5，求 k 的值．",
-    "options": [],
-    "answer": "（1）k>3/4；（2）k=2",
-    "analysis": "（1）有两个不等实根需 Δ>0：Δ = (2k+1)²-4(k²+1) = 4k-3 > 0，得 k > 3/4。（2）由韦达定理 x₁x₂ = k²+1 = 5，得 k² = 4，k = ±2。又 k > 3/4，故 k = 2。",
-    "source": "2022年湖北省随州市中考数学试卷 第18题（原题收录）",
-    "source_type": "真题",
-    "batch": "随州2022",
-    "verify_status": "已人工校验",
-    "source_id": "SUIZ2022-J18"
-  },
-  {
-    "id": "NA-0068",
+    "id": "NA-0060",
     "domain": "数与代数",
     "knowledge_point": "有理数及其运算",
     "difficulty": "基础",
@@ -1263,7 +1135,7 @@
     "source_id": "SUIZ2022-01"
   },
   {
-    "id": "NA-0069",
+    "id": "NA-0061",
     "domain": "数与代数",
     "knowledge_point": "一元一次方程",
     "difficulty": "中等",
@@ -1284,7 +1156,7 @@
     "source_id": "SUIZ2022-05"
   },
   {
-    "id": "NA-0070",
+    "id": "NA-0062",
     "domain": "数与代数",
     "knowledge_point": "科学记数法与近似数",
     "difficulty": "基础",
@@ -1305,7 +1177,7 @@
     "source_id": "SUIZ2022-06"
   },
   {
-    "id": "NA-0071",
+    "id": "NA-0063",
     "domain": "数与代数",
     "knowledge_point": "函数",
     "difficulty": "中等",
@@ -1326,7 +1198,7 @@
     "source_id": "SUIZ2022-07"
   },
   {
-    "id": "NA-0072",
+    "id": "NA-0064",
     "domain": "数与代数",
     "knowledge_point": "二次函数",
     "difficulty": "较难",
@@ -1347,7 +1219,7 @@
     "source_id": "SUIZ2022-10"
   },
   {
-    "id": "NA-0073",
+    "id": "NA-0065",
     "domain": "数与代数",
     "knowledge_point": "有理数及其运算",
     "difficulty": "基础",
@@ -1363,7 +1235,7 @@
     "source_id": "SUIZ2022-11"
   },
   {
-    "id": "NA-0074",
+    "id": "NA-0066",
     "domain": "数与代数",
     "knowledge_point": "二元一次方程组",
     "difficulty": "中等",
@@ -1379,7 +1251,7 @@
     "source_id": "SUIZ2022-13"
   },
   {
-    "id": "NA-0075",
+    "id": "NA-0067",
     "domain": "数与代数",
     "knowledge_point": "反比例函数",
     "difficulty": "中等",
@@ -1395,7 +1267,7 @@
     "source_id": "SUIZ2022-14"
   },
   {
-    "id": "NA-0076",
+    "id": "NA-0068",
     "domain": "数与代数",
     "knowledge_point": "实数",
     "difficulty": "基础",
@@ -1416,7 +1288,7 @@
     "source_id": "TZ2021-03"
   },
   {
-    "id": "NA-0077",
+    "id": "NA-0069",
     "domain": "数与代数",
     "knowledge_point": "整式运算",
     "difficulty": "基础",
@@ -1437,7 +1309,7 @@
     "source_id": "TZ2021-04"
   },
   {
-    "id": "NA-0078",
+    "id": "NA-0070",
     "domain": "数与代数",
     "knowledge_point": "一元二次方程",
     "difficulty": "基础",
@@ -1458,7 +1330,7 @@
     "source_id": "TZ2021-05"
   },
   {
-    "id": "NA-0079",
+    "id": "NA-0071",
     "domain": "数与代数",
     "knowledge_point": "整式运算",
     "difficulty": "中等",
@@ -1479,7 +1351,7 @@
     "source_id": "TZ2021-08"
   },
   {
-    "id": "NA-0080",
+    "id": "NA-0072",
     "domain": "数与代数",
     "knowledge_point": "分式及其运算",
     "difficulty": "中等",
@@ -1500,39 +1372,7 @@
     "source_id": "TZ2021-09"
   },
   {
-    "id": "NA-0081",
-    "domain": "数与代数",
-    "knowledge_point": "分式及其运算",
-    "difficulty": "中等",
-    "type": "解答题",
-    "question": "化简：(2/x - 1/(x-1)) ÷ (x²-4x+4)/(x²-2x)．",
-    "options": [],
-    "answer": "1/(x-1)",
-    "analysis": "2/x - 1/(x-1) = [2(x-1)-x]/[x(x-1)] = (x-2)/[x(x-1)]；(x²-4x+4)/(x²-2x) = (x-2)²/[x(x-2)] = (x-2)/x。相除得 (x-2)/[x(x-1)] × x/(x-2) = 1/(x-1)。",
-    "source": "2023年山东省潍坊市中考数学试卷 第15题(1)（原题收录）",
-    "source_type": "真题",
-    "batch": "潍坊2023",
-    "verify_status": "已人工校验",
-    "source_id": "WF2023-J15a"
-  },
-  {
-    "id": "NA-0082",
-    "domain": "数与代数",
-    "knowledge_point": "一元一次不等式",
-    "difficulty": "中等",
-    "type": "解答题",
-    "question": "利用数轴，确定不等式组 { 3(x+4) ≥ 2(1-x), (x-1)/2 < 3 - (2x)/3 } 的解集．",
-    "options": [],
-    "answer": "-2≤x<3",
-    "analysis": "由 3(x+4) ≥ 2(1-x) 得 3x+12 ≥ 2-2x，即 5x ≥ -10，x ≥ -2；由 (x-1)/2 < 3-2x/3 两边乘 6 得 3(x-1) < 18-4x，即 7x < 21，x < 3。故解集为 -2 ≤ x < 3。",
-    "source": "2023年山东省潍坊市中考数学试卷 第15题(2)（原题收录）",
-    "source_type": "真题",
-    "batch": "潍坊2023",
-    "verify_status": "已人工校验",
-    "source_id": "WF2023-J15b"
-  },
-  {
-    "id": "NA-0083",
+    "id": "NA-0073",
     "domain": "数与代数",
     "knowledge_point": "实数",
     "difficulty": "中等",
@@ -1553,7 +1393,7 @@
     "source_id": "WF2023-03"
   },
   {
-    "id": "NA-0084",
+    "id": "NA-0074",
     "domain": "数与代数",
     "knowledge_point": "一元二次方程",
     "difficulty": "中等",
@@ -1569,7 +1409,7 @@
     "source_id": "WF2023-12"
   },
   {
-    "id": "NA-0085",
+    "id": "NA-0075",
     "domain": "数与代数",
     "knowledge_point": "有理数及其运算",
     "difficulty": "基础",
@@ -1590,7 +1430,7 @@
     "source_id": "WH2022-01"
   },
   {
-    "id": "NA-0086",
+    "id": "NA-0076",
     "domain": "数与代数",
     "knowledge_point": "整式运算",
     "difficulty": "基础",
@@ -1611,7 +1451,7 @@
     "source_id": "WH2022-04"
   },
   {
-    "id": "NA-0087",
+    "id": "NA-0077",
     "domain": "数与代数",
     "knowledge_point": "反比例函数",
     "difficulty": "中等",
@@ -1632,7 +1472,7 @@
     "source_id": "WH2022-06"
   },
   {
-    "id": "NA-0088",
+    "id": "NA-0078",
     "domain": "数与代数",
     "knowledge_point": "有理数及其运算",
     "difficulty": "较难",
@@ -1653,7 +1493,7 @@
     "source_id": "WH2022-10"
   },
   {
-    "id": "NA-0089",
+    "id": "NA-0079",
     "domain": "数与代数",
     "knowledge_point": "二次根式及其运算",
     "difficulty": "基础",
@@ -1669,7 +1509,7 @@
     "source_id": "WH2022-11"
   },
   {
-    "id": "NA-0090",
+    "id": "NA-0080",
     "domain": "数与代数",
     "knowledge_point": "分式及其运算",
     "difficulty": "中等",
@@ -1685,7 +1525,7 @@
     "source_id": "WH2022-13"
   },
   {
-    "id": "NA-0091",
+    "id": "NA-0081",
     "domain": "数与代数",
     "knowledge_point": "实数",
     "difficulty": "基础",
@@ -1706,7 +1546,7 @@
     "source_id": "WW2023-01"
   },
   {
-    "id": "NA-0092",
+    "id": "NA-0082",
     "domain": "数与代数",
     "knowledge_point": "分式及其运算",
     "difficulty": "基础",
@@ -1727,7 +1567,7 @@
     "source_id": "WW2023-02"
   },
   {
-    "id": "NA-0093",
+    "id": "NA-0083",
     "domain": "数与代数",
     "knowledge_point": "整式运算",
     "difficulty": "基础",
@@ -1748,7 +1588,7 @@
     "source_id": "WW2023-03"
   },
   {
-    "id": "NA-0094",
+    "id": "NA-0084",
     "domain": "数与代数",
     "knowledge_point": "一次函数",
     "difficulty": "基础",
@@ -1769,7 +1609,7 @@
     "source_id": "WW2023-04"
   },
   {
-    "id": "NA-0095",
+    "id": "NA-0085",
     "domain": "数与代数",
     "knowledge_point": "分式方程",
     "difficulty": "基础",
@@ -1790,7 +1630,7 @@
     "source_id": "WW2023-06"
   },
   {
-    "id": "NA-0096",
+    "id": "NA-0086",
     "domain": "数与代数",
     "knowledge_point": "实数",
     "difficulty": "基础",
@@ -1811,7 +1651,7 @@
     "source_id": "XT2022-01"
   },
   {
-    "id": "NA-0097",
+    "id": "NA-0087",
     "domain": "数与代数",
     "knowledge_point": "二次根式及其运算",
     "difficulty": "基础",
@@ -1832,7 +1672,7 @@
     "source_id": "XT2022-05"
   },
   {
-    "id": "NA-0098",
+    "id": "NA-0088",
     "domain": "数与代数",
     "knowledge_point": "二次函数",
     "difficulty": "中等",
@@ -1853,7 +1693,7 @@
     "source_id": "XT2022-07"
   },
   {
-    "id": "NA-0099",
+    "id": "NA-0089",
     "domain": "数与代数",
     "knowledge_point": "一元二次方程",
     "difficulty": "较难",
@@ -1874,7 +1714,7 @@
     "source_id": "XT2022-08"
   },
   {
-    "id": "NA-0100",
+    "id": "NA-0090",
     "domain": "数与代数",
     "knowledge_point": "一元一次不等式",
     "difficulty": "基础",
@@ -1890,55 +1730,7 @@
     "source_id": "XN2023-13"
   },
   {
-    "id": "NA-0101",
-    "domain": "数与代数",
-    "knowledge_point": "实数",
-    "difficulty": "基础",
-    "type": "解答题",
-    "question": "计算：-1⁴ + |1-√2| - (π-3.14)⁰．",
-    "options": [],
-    "answer": "√2-3",
-    "analysis": "-1⁴ = -1；|1-√2| = √2-1；(π-3.14)⁰ = 1。原式 = -1+(√2-1)-1 = √2-3。",
-    "source": "2023年青海省西宁市中考数学试卷 第19题（原题收录）",
-    "source_type": "真题",
-    "batch": "西宁2023",
-    "verify_status": "已人工校验",
-    "source_id": "XN2023-J19"
-  },
-  {
-    "id": "NA-0102",
-    "domain": "数与代数",
-    "knowledge_point": "整式运算",
-    "difficulty": "基础",
-    "type": "解答题",
-    "question": "计算：(2a-3)² - (a+5)(a-5)．",
-    "options": [],
-    "answer": "3a²-12a+34",
-    "analysis": "(2a-3)² = 4a²-12a+9；(a+5)(a-5) = a²-25。原式 = 4a²-12a+9-a²+25 = 3a²-12a+34。",
-    "source": "2023年青海省西宁市中考数学试卷 第20题（原题收录）",
-    "source_type": "真题",
-    "batch": "西宁2023",
-    "verify_status": "已人工校验",
-    "source_id": "XN2023-J20"
-  },
-  {
-    "id": "NA-0103",
-    "domain": "数与代数",
-    "knowledge_point": "分式及其运算",
-    "difficulty": "较难",
-    "type": "解答题",
-    "question": "先化简，再求值：(a/(a²-b²) - 1/(a+b)) ÷ 1/(a²-ab)，其中 a，b 是方程 x²+x-6 = 0 的两个根．",
-    "options": [],
-    "answer": "6",
-    "analysis": "括号内通分得 [a-(a-b)]/[(a-b)(a+b)] = b/[(a-b)(a+b)]；除以 1/(a²-ab) 即乘 a(a-b)，得 ab/(a+b)。由韦达定理 a+b = -1，ab = -6，故原式 = -6/(-1) = 6。",
-    "source": "2023年青海省西宁市中考数学试卷 第21题（原题收录）",
-    "source_type": "真题",
-    "batch": "西宁2023",
-    "verify_status": "已人工校验",
-    "source_id": "XN2023-J21"
-  },
-  {
-    "id": "NA-0104",
+    "id": "NA-0091",
     "domain": "数与代数",
     "knowledge_point": "有理数及其运算",
     "difficulty": "基础",
@@ -1959,7 +1751,7 @@
     "source_id": "XN2023-01"
   },
   {
-    "id": "NA-0105",
+    "id": "NA-0092",
     "domain": "数与代数",
     "knowledge_point": "有理数及其运算",
     "difficulty": "基础",
@@ -1980,7 +1772,7 @@
     "source_id": "XN2023-02"
   },
   {
-    "id": "NA-0106",
+    "id": "NA-0093",
     "domain": "数与代数",
     "knowledge_point": "二元一次方程组",
     "difficulty": "中等",
@@ -2001,7 +1793,7 @@
     "source_id": "XN2023-07"
   },
   {
-    "id": "NA-0107",
+    "id": "NA-0094",
     "domain": "数与代数",
     "knowledge_point": "二次函数",
     "difficulty": "较难",
@@ -2022,7 +1814,7 @@
     "source_id": "XN2023-08"
   },
   {
-    "id": "NA-0108",
+    "id": "NA-0095",
     "domain": "数与代数",
     "knowledge_point": "科学记数法与近似数",
     "difficulty": "基础",
@@ -2043,7 +1835,7 @@
     "source_id": "ZJ2024-03"
   },
   {
-    "id": "NA-0109",
+    "id": "NA-0096",
     "domain": "数与代数",
     "knowledge_point": "整式运算",
     "difficulty": "基础",
@@ -2064,7 +1856,7 @@
     "source_id": "ZJ2024-04"
   },
   {
-    "id": "NA-0110",
+    "id": "NA-0097",
     "domain": "数与代数",
     "knowledge_point": "因式分解",
     "difficulty": "基础",
@@ -2080,7 +1872,7 @@
     "source_id": "ZJ2024-11"
   },
   {
-    "id": "NA-0111",
+    "id": "NA-0098",
     "domain": "数与代数",
     "knowledge_point": "分式方程",
     "difficulty": "基础",
@@ -2573,38 +2365,6 @@
   {
     "id": "GG-0026",
     "domain": "图形与几何",
-    "knowledge_point": "锐角三角函数",
-    "difficulty": "中等",
-    "type": "解答题",
-    "question": "如图是某款篮球架，立柱 OA 垂直地面 OB，支架 CD 与 OA 交于点 A，支架 CG⊥CD 交 OA 于点 G，∠AGC = 32°．（1）求 ∠GAC 的度数．",
-    "options": [],
-    "answer": "58°",
-    "analysis": "CG⊥CD 得 ∠ACG = 90°。在 Rt△ACG 中，∠GAC = 90°-∠AGC = 90°-32° = 58°。",
-    "source": "2023年浙江省绍兴市中考数学试卷 第19题(1)（原题收录）",
-    "source_type": "真题",
-    "batch": "绍兴2023",
-    "verify_status": "已人工校验",
-    "source_id": "SX2023-19a"
-  },
-  {
-    "id": "GG-0027",
-    "domain": "图形与几何",
-    "knowledge_point": "圆的性质",
-    "difficulty": "中等",
-    "type": "解答题",
-    "question": "如图，AB 是 ⊙O 的直径，C 是 ⊙O 上一点，过点 C 作 ⊙O 的切线 CD，交 AB 的延长线于点 D，过点 A 作 AE⊥CD 于点 E．（1）若 ∠EAC = 25°，求 ∠ACD 的度数．",
-    "options": [],
-    "answer": "65°",
-    "analysis": "CD 为切线，由弦切角定理，∠ACD 等于弦 AC 所对的圆周角 ∠ABC。AE⊥CD、OC⊥CD 得 AE∥OC，故 ∠ACO = ∠EAC = 25°；又 OA=OC 得 ∠OAC = 25°，于是 ∠ABC = 90°-25° = 65°，故 ∠ACD = 65°。",
-    "source": "2023年浙江省绍兴市中考数学试卷 第21题(1)（原题收录）",
-    "source_type": "真题",
-    "batch": "绍兴2023",
-    "verify_status": "已人工校验",
-    "source_id": "SX2023-21a"
-  },
-  {
-    "id": "GG-0028",
-    "domain": "图形与几何",
     "knowledge_point": "平面直角坐标系",
     "difficulty": "基础",
     "type": "单选题",
@@ -2624,7 +2384,7 @@
     "source_id": "SX2023-07"
   },
   {
-    "id": "GG-0029",
+    "id": "GG-0027",
     "domain": "图形与几何",
     "knowledge_point": "投影与视图",
     "difficulty": "基础",
@@ -2645,7 +2405,7 @@
     "source_id": "SY2022-02"
   },
   {
-    "id": "GG-0030",
+    "id": "GG-0028",
     "domain": "图形与几何",
     "knowledge_point": "点、线、角",
     "difficulty": "基础",
@@ -2666,7 +2426,7 @@
     "source_id": "SY2022-04"
   },
   {
-    "id": "GG-0031",
+    "id": "GG-0029",
     "domain": "图形与几何",
     "knowledge_point": "相似三角形",
     "difficulty": "中等",
@@ -2687,7 +2447,7 @@
     "source_id": "SY2022-07"
   },
   {
-    "id": "GG-0032",
+    "id": "GG-0030",
     "domain": "图形与几何",
     "knowledge_point": "锐角三角函数",
     "difficulty": "较难",
@@ -2708,7 +2468,7 @@
     "source_id": "SY2022-08"
   },
   {
-    "id": "GG-0033",
+    "id": "GG-0031",
     "domain": "图形与几何",
     "knowledge_point": "圆的性质",
     "difficulty": "较难",
@@ -2729,23 +2489,7 @@
     "source_id": "SY2022-09"
   },
   {
-    "id": "GG-0034",
-    "domain": "图形与几何",
-    "knowledge_point": "多边形与四边形",
-    "difficulty": "中等",
-    "type": "解答题",
-    "question": "如图，在平行四边形 ABCD 中，点 E，F 分别在边 AB，CD 上，且四边形 BEDF 为正方形．（1）求证 AE = CF；（2）已知平行四边形 ABCD 的面积为 20，AB = 5，求 CF 的长．",
-    "options": [],
-    "answer": "CF=1",
-    "analysis": "（2）平行四边形面积 = AB×高 = 20，AB = 5，故高为 4，即正方形 BEDF 的边长 BE = 4。于是 AE = AB-BE = 1。由（1）AE = CF，故 CF = 1。",
-    "source": "2022年湖北省随州市中考数学试卷 第19题（原题收录，按最终答案判分）",
-    "source_type": "真题",
-    "batch": "随州2022",
-    "verify_status": "已人工校验",
-    "source_id": "SUIZ2022-J19"
-  },
-  {
-    "id": "GG-0035",
+    "id": "GG-0032",
     "domain": "图形与几何",
     "knowledge_point": "相交线与平行线",
     "difficulty": "基础",
@@ -2766,7 +2510,7 @@
     "source_id": "SUIZ2022-02"
   },
   {
-    "id": "GG-0036",
+    "id": "GG-0033",
     "domain": "图形与几何",
     "knowledge_point": "投影与视图",
     "difficulty": "基础",
@@ -2787,7 +2531,7 @@
     "source_id": "SUIZ2022-04"
   },
   {
-    "id": "GG-0037",
+    "id": "GG-0034",
     "domain": "图形与几何",
     "knowledge_point": "锐角三角函数",
     "difficulty": "较难",
@@ -2808,7 +2552,7 @@
     "source_id": "SUIZ2022-09"
   },
   {
-    "id": "GG-0038",
+    "id": "GG-0035",
     "domain": "图形与几何",
     "knowledge_point": "圆的性质",
     "difficulty": "基础",
@@ -2824,7 +2568,7 @@
     "source_id": "SUIZ2022-12"
   },
   {
-    "id": "GG-0039",
+    "id": "GG-0036",
     "domain": "图形与几何",
     "knowledge_point": "点、线、角",
     "difficulty": "基础",
@@ -2845,23 +2589,7 @@
     "source_id": "TZ2021-02"
   },
   {
-    "id": "GG-0040",
-    "domain": "图形与几何",
-    "knowledge_point": "锐角三角函数",
-    "difficulty": "较难",
-    "type": "解答题",
-    "question": "如图，l 是南北方向的海岸线，码头 A 与灯塔 B 相距 24 千米，海岛 C 位于码头 A 北偏东 60° 方向．一艘勘测船从海岛 C 沿北偏西 30° 方向往灯塔 B 行驶，沿线勘测石油资源，勘测发现位于码头 A 北偏东 15° 方向的 D 处石油资源丰富．若规划修建从 D 处到海岸线的输油管道，则输油管道的最短长度是多少千米？（结果保留根号）",
-    "options": [],
-    "answer": "6(√3-1)",
-    "analysis": "以 A 为原点、海岸线 l 为 y 轴（北为正）建系：B(0,24)。C 在 A 北偏东 60° 射线上，又在过 B 且方向为北偏西 30° 的直线上，解得 C(6√3, 6)。D 在直线 CB 上且在 A 北偏东 15° 射线上，解得 D(6√3-6, 6+6√3)。D 到海岸线（y 轴）的最短距离即横坐标绝对值 6√3-6 = 6(√3-1) 千米。",
-    "source": "2023年山东省潍坊市中考数学试卷 第17题（原题收录，按最终答案判分）",
-    "source_type": "真题",
-    "batch": "潍坊2023",
-    "verify_status": "已人工校验",
-    "source_id": "WF2023-J17"
-  },
-  {
-    "id": "GG-0041",
+    "id": "GG-0037",
     "domain": "图形与几何",
     "knowledge_point": "平移",
     "difficulty": "中等",
@@ -2882,7 +2610,7 @@
     "source_id": "WF2023-06"
   },
   {
-    "id": "GG-0042",
+    "id": "GG-0038",
     "domain": "图形与几何",
     "knowledge_point": "相似三角形",
     "difficulty": "较难",
@@ -2898,7 +2626,7 @@
     "source_id": "WF2023-14"
   },
   {
-    "id": "GG-0043",
+    "id": "GG-0039",
     "domain": "图形与几何",
     "knowledge_point": "等腰三角形与直角三角形",
     "difficulty": "中等",
@@ -2919,7 +2647,7 @@
     "source_id": "WW2023-05"
   },
   {
-    "id": "GG-0044",
+    "id": "GG-0040",
     "domain": "图形与几何",
     "knowledge_point": "投影与视图",
     "difficulty": "基础",
@@ -2940,7 +2668,7 @@
     "source_id": "XT2022-02"
   },
   {
-    "id": "GG-0045",
+    "id": "GG-0041",
     "domain": "图形与几何",
     "knowledge_point": "相交线与平行线",
     "difficulty": "中等",
@@ -2961,7 +2689,7 @@
     "source_id": "XT2022-04"
   },
   {
-    "id": "GG-0046",
+    "id": "GG-0042",
     "domain": "图形与几何",
     "knowledge_point": "圆的性质",
     "difficulty": "中等",
@@ -2982,7 +2710,7 @@
     "source_id": "XT2022-06"
   },
   {
-    "id": "GG-0047",
+    "id": "GG-0043",
     "domain": "图形与几何",
     "knowledge_point": "锐角三角函数",
     "difficulty": "基础",
@@ -2998,7 +2726,7 @@
     "source_id": "XN2023-14"
   },
   {
-    "id": "GG-0048",
+    "id": "GG-0044",
     "domain": "图形与几何",
     "knowledge_point": "三角形的性质",
     "difficulty": "较难",
@@ -3014,7 +2742,7 @@
     "source_id": "XN2023-16"
   },
   {
-    "id": "GG-0049",
+    "id": "GG-0045",
     "domain": "图形与几何",
     "knowledge_point": "旋转与中心对称",
     "difficulty": "较难",
@@ -3030,55 +2758,7 @@
     "source_id": "XN2023-18"
   },
   {
-    "id": "GG-0050",
-    "domain": "图形与几何",
-    "knowledge_point": "全等三角形",
-    "difficulty": "较难",
-    "type": "解答题",
-    "question": "如图，在平行四边形 ABCD 中，点 E，F 分别在 AB，CD 的延长线上，且 BE = DF，连接 EF 与 AC 交于点 M，连接 AF，CE．（1）求证：△AEM ≌ △CFM；（2）若 AC⊥EF，AF = 3√2，求四边形 AECF 的周长．",
-    "options": [],
-    "answer": "12√2",
-    "analysis": "（1）由 AB∥CD 得 ∠EAM = ∠FCM，∠AEM = ∠CFM，又 AE = CF，故 △AEM ≌ △CFM（ASA）。（2）由全等得 AM = CM、EM = FM，即 AC 与 EF 互相平分，四边形 AECF 为平行四边形；又 AC⊥EF，故 AECF 为菱形，周长 = 4AF = 12√2。",
-    "source": "2023年青海省西宁市中考数学试卷 第23题（原题收录，按最终答案判分）",
-    "source_type": "真题",
-    "batch": "西宁2023",
-    "verify_status": "已人工校验",
-    "source_id": "XN2023-J23"
-  },
-  {
-    "id": "GG-0051",
-    "domain": "图形与几何",
-    "knowledge_point": "等腰三角形与直角三角形",
-    "difficulty": "较难",
-    "type": "解答题",
-    "question": "一次函数 y = 2x-4 的图象与 x 轴交于点 A，且经过点 B(m, 4)．点 P 在 x 轴的正半轴上，若 △ABP 是以 AB 为腰的等腰三角形，请直接写出所有符合条件的 P 点坐标．",
-    "options": [],
-    "answer": "(2+2√5,0) 或 (6,0)",
-    "analysis": "由 y=2x-4 得 A(2,0)；代入 B 得 4=2m-4，m=4，B(4,4)，AB = √(2²+4²) = 2√5。设 P(p,0)，p>0。①AB=AP：|p-2| = 2√5，取正半轴得 p = 2+2√5；②AB=BP：√((p-4)²+16) = 2√5，得 (p-4)² = 4，p=6 或 p=2（p=2 与 A 重合，舍去）。故 P(2+2√5,0) 或 (6,0)。",
-    "source": "2023年青海省西宁市中考数学试卷 第24题(3)（原题收录）",
-    "source_type": "真题",
-    "batch": "西宁2023",
-    "verify_status": "已人工校验",
-    "source_id": "XN2023-J24"
-  },
-  {
-    "id": "GG-0052",
-    "domain": "图形与几何",
-    "knowledge_point": "圆的性质",
-    "difficulty": "较难",
-    "type": "解答题",
-    "question": "如图，AB 是 ⊙O 的弦，半径 OC⊥AB，垂足为 D，弦 CE 与 AB 交于点 F，连接 AE，AC，BC．（1）求证：∠BAC = ∠E；（2）若 AB = 8，DC = 2，CE = 3√10，求 CF 的长．",
-    "options": [],
-    "answer": "2√10/3",
-    "analysis": "（2）OC⊥AB 得 AD = 4。设半径 R，OD = R-2，由 R² = (R-2)²+16 得 R = 5，OD = 3。建系 O(0,0)、C(0,-5)、A(-4,-3)、B(4,-3)。由 CE = 3√10 得 E(-3,4)。直线 CE 与 y=-3 交于 F(-2/3,-3)，故 CF = √[(2/3)²+2²] = 2√10/3。",
-    "source": "2023年青海省西宁市中考数学试卷 第25题（原题收录，按最终答案判分）",
-    "source_type": "真题",
-    "batch": "西宁2023",
-    "verify_status": "已人工校验",
-    "source_id": "XN2023-J25"
-  },
-  {
-    "id": "GG-0053",
+    "id": "GG-0046",
     "domain": "图形与几何",
     "knowledge_point": "等腰三角形与直角三角形",
     "difficulty": "较难",
@@ -3099,7 +2779,7 @@
     "source_id": "XN2023-06"
   },
   {
-    "id": "GG-0054",
+    "id": "GG-0047",
     "domain": "图形与几何",
     "knowledge_point": "相似三角形",
     "difficulty": "中等",
@@ -3401,38 +3081,6 @@
   {
     "id": "SP-0015",
     "domain": "统计与概率",
-    "knowledge_point": "统计图表",
-    "difficulty": "基础",
-    "type": "解答题",
-    "question": "某校兴趣小组开展问卷调查，条形统计图显示：乒乓球 30 人、足球 10 人、排球 15 人（篮球、羽毛球人数未标注）；扇形统计图显示：乒乓球占 30%，羽毛球占 5%．（1）本次调查共抽查了多少名学生？",
-    "options": [],
-    "answer": "100",
-    "analysis": "乒乓球 30 人占 30%，故总人数 = 30÷30% = 100（名）。",
-    "source": "2023年浙江省绍兴市中考数学试卷 第18题(1)（原题收录）",
-    "source_type": "真题",
-    "batch": "绍兴2023",
-    "verify_status": "已人工校验",
-    "source_id": "SX2023-18a"
-  },
-  {
-    "id": "SP-0016",
-    "domain": "统计与概率",
-    "knowledge_point": "统计图表",
-    "difficulty": "中等",
-    "type": "解答题",
-    "question": "某校兴趣小组开展问卷调查，共抽查 100 名学生．条形统计图显示：乒乓球 30 人、足球 10 人、排球 15 人（篮球、羽毛球人数未标注）；扇形统计图显示：乒乓球占 30%，羽毛球占 5%．（2）估计该校 900 名初中生中最喜爱篮球项目的人数．",
-    "options": [],
-    "answer": "360",
-    "analysis": "羽毛球占 5% 即 5 人，故篮球人数 = 100-30-10-15-5 = 40 人，占 40%。估计全校 900×40% = 360（人）。",
-    "source": "2023年浙江省绍兴市中考数学试卷 第18题(2)（原题收录）",
-    "source_type": "真题",
-    "batch": "绍兴2023",
-    "verify_status": "已人工校验",
-    "source_id": "SX2023-18b"
-  },
-  {
-    "id": "SP-0017",
-    "domain": "统计与概率",
     "knowledge_point": "概率的意义与简单计算",
     "difficulty": "基础",
     "type": "单选题",
@@ -3452,7 +3100,7 @@
     "source_id": "SX2023-05"
   },
   {
-    "id": "SP-0018",
+    "id": "SP-0016",
     "domain": "统计与概率",
     "knowledge_point": "数据的离散程度",
     "difficulty": "中等",
@@ -3473,23 +3121,7 @@
     "source_id": "SY2022-05"
   },
   {
-    "id": "SP-0019",
-    "domain": "统计与概率",
-    "knowledge_point": "统计图表",
-    "difficulty": "中等",
-    "type": "解答题",
-    "question": "某校从全校 600 名学生中随机抽取部分学生进行“你最喜欢哪一种社团活动（每人必选且只选一种）”的问卷调查，绘制了两幅不完整的统计图：条形统计图中 A（音乐社团）10 人、B（体育社团）24 人、C（文学社团）15 人、D（美术社团）m 人；扇形统计图中 B 占 40%．（1）参加问卷调查的学生共有______人；（2）m 的值为______，扇形统计图中 α（D 的圆心角）的度数为______；（3）估计该校 600 名学生中最喜欢“音乐社团”的约有______人；（4）从“文学社团”里表现优秀的甲、乙、丙、丁四名同学中随机选取两名参加演讲比赛，求恰好选中甲和乙两名同学的概率．",
-    "options": [],
-    "answer": "（1）60；（2）m=11，α=66°；（3）100；（4）1/6",
-    "analysis": "（1）B 有 24 人占 40%，总人数 = 24÷40% = 60。（2）m = 60-10-24-15 = 11；D 占 11/60，圆心角 α = 11/60×360° = 66°。（3）600×10/60 = 100。（4）四人中选两人共 C(4,2)=6 种，选中甲、乙只有 1 种，概率 1/6。",
-    "source": "2022年湖北省随州市中考数学试卷 第20题（原题收录，按最终答案判分）",
-    "source_type": "真题",
-    "batch": "随州2022",
-    "verify_status": "已人工校验",
-    "source_id": "SUIZ2022-J20"
-  },
-  {
-    "id": "SP-0020",
+    "id": "SP-0017",
     "domain": "统计与概率",
     "knowledge_point": "数据的集中趋势",
     "difficulty": "基础",
@@ -3510,7 +3142,7 @@
     "source_id": "SUIZ2022-03"
   },
   {
-    "id": "SP-0021",
+    "id": "SP-0018",
     "domain": "统计与概率",
     "knowledge_point": "数据的离散程度",
     "difficulty": "中等",
@@ -3531,7 +3163,7 @@
     "source_id": "TZ2021-06"
   },
   {
-    "id": "SP-0022",
+    "id": "SP-0019",
     "domain": "统计与概率",
     "knowledge_point": "用列举法求概率",
     "difficulty": "基础",
@@ -3547,7 +3179,7 @@
     "source_id": "WF2023-13"
   },
   {
-    "id": "SP-0023",
+    "id": "SP-0020",
     "domain": "统计与概率",
     "knowledge_point": "事件的分类",
     "difficulty": "基础",
@@ -3568,7 +3200,7 @@
     "source_id": "WH2022-02"
   },
   {
-    "id": "SP-0024",
+    "id": "SP-0021",
     "domain": "统计与概率",
     "knowledge_point": "用列举法求概率",
     "difficulty": "较难",
@@ -3589,7 +3221,7 @@
     "source_id": "WH2022-08"
   },
   {
-    "id": "SP-0025",
+    "id": "SP-0022",
     "domain": "统计与概率",
     "knowledge_point": "数据的集中趋势",
     "difficulty": "基础",
@@ -3605,7 +3237,7 @@
     "source_id": "WH2022-12"
   },
   {
-    "id": "SP-0026",
+    "id": "SP-0023",
     "domain": "统计与概率",
     "knowledge_point": "统计图表",
     "difficulty": "中等",
@@ -3626,7 +3258,7 @@
     "source_id": "WW2023-08"
   },
   {
-    "id": "SP-0027",
+    "id": "SP-0024",
     "domain": "统计与概率",
     "knowledge_point": "数据的离散程度",
     "difficulty": "中等",
@@ -3647,7 +3279,7 @@
     "source_id": "XT2022-03"
   },
   {
-    "id": "SP-0028",
+    "id": "SP-0025",
     "domain": "统计与概率",
     "knowledge_point": "数据的收集",
     "difficulty": "基础",
@@ -3663,23 +3295,7 @@
     "source_id": "XN2023-22a"
   },
   {
-    "id": "SP-0029",
-    "domain": "统计与概率",
-    "knowledge_point": "用列举法求概率",
-    "difficulty": "中等",
-    "type": "解答题",
-    "question": "某校举办非遗文化进校园活动，决定从 A，B，C，D 四名同学中随机抽取两人作为“小小宣传员”．请用画树状图或列表的方法求出 A，B 两人同时被选中的概率，并列出所有等可能的结果．",
-    "options": [],
-    "answer": "1/6",
-    "analysis": "从 4 人中选 2 人共 C(4,2) = 6 种等可能结果：AB、AC、AD、BC、BD、CD。A、B 同时被选中只有 AB 这 1 种，故概率为 1/6。",
-    "source": "2023年青海省西宁市中考数学试卷 第22题(2)（原题收录）",
-    "source_type": "真题",
-    "batch": "西宁2023",
-    "verify_status": "已人工校验",
-    "source_id": "XN2023-22b"
-  },
-  {
-    "id": "SP-0030",
+    "id": "SP-0026",
     "domain": "统计与概率",
     "knowledge_point": "数据的集中趋势",
     "difficulty": "基础",
@@ -3700,7 +3316,7 @@
     "source_id": "ZJ2024-05"
   },
   {
-    "id": "SP-0031",
+    "id": "SP-0027",
     "domain": "统计与概率",
     "knowledge_point": "概率的意义与简单计算",
     "difficulty": "基础",
@@ -3730,53 +3346,5 @@
     "batch": "长沙2023",
     "verify_status": "已人工校验",
     "source_id": "CS2023-16"
-  },
-  {
-    "id": "CP-0002",
-    "domain": "综合与实践",
-    "knowledge_point": "数与代数的综合应用",
-    "difficulty": "中等",
-    "type": "解答题",
-    "question": "“中国石化”推出促销活动，一张加油卡的面值是 1000 元，打九折出售．使用这张加油卡加油，每一升油，油的单价降低 0.30 元．假设这张加油卡的面值能够一次性全部用完．（1）他实际花了多少钱购买会员卡？（2）减价后每升油的单价为 y 元/升，原价为 x 元/升，求 y 关于 x 的函数解析式（不用写出定义域）；（3）油的原价是 7.30 元/升，求优惠后油的单价比原价便宜多少元？",
-    "options": [],
-    "answer": "（1）900元；（2）y=0.9x-0.27；（3）1元",
-    "analysis": "（1）1000×0.9 = 900（元）。（2）面值 1000 元按 (x-0.30) 元/升可加 1000/(x-0.30) 升，实付 900 元，故 y = 900÷[1000/(x-0.30)] = 0.9(x-0.30) = 0.9x-0.27。（3）x = 7.30 时 y = 0.9×7.00 = 6.30，便宜 7.30-6.30 = 1（元）。",
-    "source": "2023年上海市中考数学试卷 第22题（原题收录，按最终答案判分）",
-    "source_type": "真题",
-    "batch": "上海2023",
-    "verify_status": "已人工校验",
-    "source_id": "SH2023-J22"
-  },
-  {
-    "id": "CP-0003",
-    "domain": "综合与实践",
-    "knowledge_point": "跨领域实际问题建模",
-    "difficulty": "较难",
-    "type": "解答题",
-    "question": "一条笔直的路上依次有 M，P，N 三地，其中 M，N 两地相距 1000 米．甲、乙两机器人分别从 M，N 两地同时出发，去目的地 N，M，匀速而行．图中 OA，BC 分别表示甲、乙机器人离 M 地的距离 y（米）与行走时间 x（分钟）的函数关系图象（OA 过 O(0,0) 与 A(5,1000)，BC 过 B(0,1000) 与 C(10,0)）．（1）求 OA 所在直线的表达式；（2）出发后甲机器人行走多少时间，与乙机器人相遇？（3）甲机器人到 P 地后，再经过 1 分钟乙机器人也到 P 地，求 P，M 两地间的距离．",
-    "options": [],
-    "answer": "（1）y=200x；（2）10/3分钟；（3）600米",
-    "analysis": "（1）OA 过原点与 (5,1000)，斜率 200，故 y = 200x。（2）乙：y = 1000-100x。相遇时 200x = 1000-100x，x = 10/3 分钟。（3）设 PM = d，甲用时 d/200，乙用时 (1000-d)/100，由 (1000-d)/100 - d/200 = 1 得 3d = 1800，d = 600 米。",
-    "source": "2023年浙江省绍兴市中考数学试卷 第20题（原题收录，按最终答案判分）",
-    "source_type": "真题",
-    "batch": "绍兴2023",
-    "verify_status": "已人工校验",
-    "source_id": "SX2023-J20"
-  },
-  {
-    "id": "CP-0004",
-    "domain": "综合与实践",
-    "knowledge_point": "几何与代数的综合（数形结合）",
-    "difficulty": "中等",
-    "type": "解答题",
-    "question": "《几何原本》中记载了很多利用几何图形来论证代数结论的方法．（1）观察下列图形，找出可以推出的代数公式（只需填写对应公式的序号）：图1 为三个矩形并排（宽分别为 a，b，c，高为 d）；图2 为大矩形被纵横分割（边长 a+b 与 c+d）；图3 为边长为 a 的正方形中挖去后剩余部分（涉及 a-b）；图4 为边长为 a+b 的正方形分割图．公式①：(a+b+c)d = ad+bd+cd；公式②：(a+b)(c+d) = ac+ad+bc+bd；公式③：(a-b)² = a²-2ab+b²；公式④：(a+b)² = a²+2ab+b²．图1对应公式______，图2对应公式______，图3对应公式______，图4对应公式______．",
-    "options": [],
-    "answer": "①，②，③，④",
-    "analysis": "图1 是三个并排矩形，面积 (a+b+c)d = ad+bd+cd，对应公式①；图2 是边长 a+b 与 c+d 的大矩形分割，对应公式②；图3 对应完全平方差公式③；图4 对应完全平方和公式④。",
-    "source": "2022年湖北省随州市中考数学试卷 第23题第(1)问（原题收录）",
-    "source_type": "真题",
-    "batch": "随州2022",
-    "verify_status": "已人工校验",
-    "source_id": "SUIZ2022-J23"
   }
 ]

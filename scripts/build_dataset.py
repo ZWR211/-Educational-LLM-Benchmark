@@ -16,6 +16,9 @@ OUT = os.path.join(BASE, "data", "math_benchmark.json")
 DOMAIN_CODE = {"数与代数": "NA", "图形与几何": "GG", "统计与概率": "SP", "综合与实践": "CP"}
 DOMAIN_ORDER = list(DOMAIN_CODE.keys())
 
+# 基准只收客观题；解答题保留在 data/sources/ 中，但不进入数据集
+KEEP_TYPES = {"单选题", "填空题"}
+
 
 def norm_q(t):
     return re.sub(r"\s+", "", t).replace("（", "(").replace("）", ")").replace("　", "")
@@ -26,8 +29,11 @@ def main():
     for pf in sorted(glob.glob(os.path.join(SOURCES_DIR, "*.json"))):
         with open(pf, "r", encoding="utf-8") as f:
             data = json.load(f)
-        print(f"[载入] {os.path.basename(pf)}: {len(data)} 题")
-        items.extend(data)
+        keep = [q for q in data if q.get("type") in KEEP_TYPES]
+        skipped = len(data) - len(keep)
+        note = f"（跳过非客观题 {skipped} 道）" if skipped else ""
+        print(f"[载入] {os.path.basename(pf)}: {len(keep)} 题{note}")
+        items.extend(keep)
 
     # 去重
     seen, kept, dup = set(), [], 0
