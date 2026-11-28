@@ -22,3 +22,6 @@ Thumbs.db
 .DS_Store
 desktop.ini
 *汇报*
+
+# ---- PPT 生成脚本不纳入版本库 ----
+generate_*_ppt.py
